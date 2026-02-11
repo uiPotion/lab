@@ -1,0 +1,86 @@
+/* ============================================
+   MODAL DIALOG FORM FIXES - Icon Sizing
+   ============================================ */
+
+/* Form Input Icons - FIXED SIZE */
+.form-input__icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+.form-input__icon svg {
+  width: 16px !important;
+  height: 16px !important;
+  display: block;
+}
+
+.form-group--success .form-input__icon--success {
+  display: flex;
+  color: var(--color-success);
+}
+
+.form-group--error .form-input__icon--error {
+  display: flex;
+  color: var(--color-error);
+}
+
+/* Form Select Icon */
+.form-select__icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.form-select__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Form Alert Icon */
+.form-alert__icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+
+.form-alert__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Modal Close Icon */
+.modal__close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Button Icons */
+.btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Toast Icons */
+.toast__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.toast__close svg {
+  width: 16px;
+  height: 16px;
+}

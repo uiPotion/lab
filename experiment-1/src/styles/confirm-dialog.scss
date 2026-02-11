@@ -1,0 +1,195 @@
+/* ============================================
+   CONFIRM DIALOG - Custom Modal for Deletion
+   ============================================ */
+
+.confirm-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 180ms cubic-bezier(0.2, 0, 0, 1),
+              visibility 180ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.confirm-dialog--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.confirm-dialog__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.confirm-dialog__container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(8px) scale(0.98);
+  opacity: 0;
+  transition: transform 180ms cubic-bezier(0.2, 0, 0, 1),
+              opacity 180ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.confirm-dialog--open .confirm-dialog__container {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.confirm-dialog__header {
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.confirm-dialog__icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-4);
+  color: var(--color-error);
+}
+
+.confirm-dialog__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.confirm-dialog__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.confirm-dialog__description {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.confirm-dialog__body {
+  padding: 0 var(--space-6) var(--space-4);
+}
+
+.confirm-dialog__warning {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.confirm-dialog__warning-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--color-warning);
+  margin-top: 1px;
+}
+
+.confirm-dialog__warning-text {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.confirm-dialog__footer {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6) var(--space-6);
+}
+
+.confirm-dialog__btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.confirm-dialog__btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.confirm-dialog__btn--secondary {
+  color: var(--color-text-primary);
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border);
+}
+
+.confirm-dialog__btn--secondary:hover {
+  background: var(--color-bg-elevated);
+  border-color: var(--color-text-muted);
+}
+
+.confirm-dialog__btn--danger {
+  color: #fff;
+  background: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.confirm-dialog__btn--danger:hover {
+  background: #dc2626;
+  border-color: #dc2626;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.confirm-dialog__btn--danger:focus-visible {
+  outline-color: var(--color-error);
+}
+
+.confirm-dialog__btn--loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.confirm-dialog__btn--loading::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: confirm-spin 0.8s linear infinite;
+}
+
+@keyframes confirm-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .confirm-dialog,
+  .confirm-dialog__container {
+    transition-duration: 100ms;
+  }
+}

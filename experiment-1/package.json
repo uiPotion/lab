@@ -1,0 +1,19 @@
+{
+  "name": "dark-landing-page",
+  "version": "1.0.0",
+  "description": "Dark-themed landing page with pricing tables",
+  "scripts": {
+    "build": "harold-scripts build",
+    "start": "harold-scripts start"
+  },
+  "devDependencies": {
+    "harold-scripts": "^1.4.0"
+  },
+  "harold": {
+    "mdFilesDirName": "posts",
+    "mdFilesLayoutsDirName": "blog-layouts",
+    "outputDirName": "build",
+    "minifyHtml": true,
+    "minifyCss": true
+  }
+}
