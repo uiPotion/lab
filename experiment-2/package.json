@@ -1,0 +1,11 @@
+{
+  "name": "lumina-blog",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "harold-scripts build",
+    "start": "harold-scripts start"
+  },
+  "devDependencies": {
+    "harold-scripts": "^1.4.0"
+  }
+}

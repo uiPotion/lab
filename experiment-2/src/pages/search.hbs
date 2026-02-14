@@ -1,0 +1,58 @@
+{{> head title="Search - Lumina Blog" description="Search articles on Lumina Blog."}}
+
+{{> navbar}}
+
+<main id="main-content">
+  <section class="hero">
+    <div class="hero-container">
+      <p class="hero-eyebrow">Find Articles</p>
+      <h1 class="hero-title">Search</h1>
+      <p class="hero-subtitle">Find articles by keyword, topic, or author.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="search-page">
+      <form id="search-form" class="search-form" role="search">
+        <div class="search-input-wrapper">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input 
+            type="search" 
+            id="search-input" 
+            class="search-input" 
+            placeholder="Search articles, topics, authors..." 
+            autocomplete="off"
+            autofocus
+          >
+        </div>
+        <button type="submit" class="btn btn-primary search-submit">Search</button>
+      </form>
+
+      <div id="search-status" class="search-status" aria-live="polite">Type above to search articles...</div>
+
+      <div id="search-results" class="search-results" style="display: none;">
+        <!-- Results will be rendered here by JavaScript -->
+      </div>
+
+      <div id="search-popular" class="search-popular">
+        <h3 class="search-popular-title">Popular Topics</h3>
+        <div class="search-popular-tags">
+          <a href="{{relativePath 'categories.html'}}" class="tag">Design</a>
+          <a href="{{relativePath 'categories.html'}}" class="tag">Development</a>
+          <a href="{{relativePath 'categories.html'}}" class="tag">Technology</a>
+          <a href="{{relativePath 'categories.html'}}" class="tag">Tutorial</a>
+          <a href="{{relativePath 'categories.html'}}" class="tag">CSS</a>
+          <a href="{{relativePath 'categories.html'}}" class="tag">HaroldJS</a>
+        </div>
+        
+        <h3 class="search-popular-title" style="margin-top: var(--space-8);">Recent Articles</h3>
+        {{postsList perPageLimit=3 currentPage=1 dateFormat="dd mmmm yyyy"}}
+      </div>
+    </div>
+  </div>
+</main>
+
+{{> footer}}
+
+<script src="https://unpkg.com/lunr/lunr.js"></script>
+<script src="{{relativePath 'assets/js/search.js'}}"></script>

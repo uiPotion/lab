@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <title>{{title}} - Lumina Blog</title>
+  <meta name="description" content="{{excerpt}}">
+  
+  <!-- CRITICAL: Theme flash prevention - MUST be first blocking script -->
+  <script>
+    (function() {
+      var theme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var resolved = theme === 'light' ? 'light' : theme === 'dark' ? 'dark' : prefersDark ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', resolved);
+    })();
+  </script>
+  
+  <!-- Block all transitions during page load to prevent flash -->
+  <style id="theme-flash-prevent">
+    * { transition: none !important; animation: none !important; }
+  </style>
+  
+  <link rel="stylesheet" href="{{relativePath 'styles/main.css'}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>body { font-family: 'Inter', system-ui, sans-serif; }</style>
+</head>
+<body>
+  {{> navbar}}
+
+  <main id="main-content">
+    <article>
+      <!-- Modern Article Hero - Full Width -->
+      <header class="article-hero">
+        {{#if coverImage}}
+        <div class="article-hero-bg">
+          <img src="{{coverImage}}" alt="{{title}}">
+        </div>
+        {{/if}}
+        <div class="article-hero-overlay"></div>
+        <div class="article-hero-content">
+          <div class="article-hero-inner">
+            {{#if tags}}
+            <a href="{{relativePath 'categories.html'}}" class="article-hero-category">{{tags.[0]}}</a>
+            {{/if}}
+            <h1 class="article-hero-title">{{title}}</h1>
+            <div class="article-hero-meta">
+              <div class="article-hero-author">
+                <div class="article-hero-avatar" aria-hidden="true"></div>
+                <div class="article-hero-author-info">
+                  <span class="article-hero-author-name">{{author}}</span>
+                  <span class="article-hero-date">{{formatDate date=publicationDate format='mmmm d, yyyy'}}</span>
+                </div>
+              </div>
+              {{#if readingTime}}
+              <div class="article-hero-stats">
+                <span class="article-hero-stat">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  {{readingTime}} min read
+                </span>
+              </div>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Article Content with Sidebar -->
+      <div class="article-wrapper">
+        <div class="container article-main">
+          <div class="article-content-wrapper">
+            <div class="article-body-wrapper">
+              <div class="article-body">
+                {{{content}}}
+              </div>
+
+              <!-- Share Section -->
+              <div class="share-section">
+                <h2 class="share-title">Share this article</h2>
+                <div class="share-buttons">
+                  <button class="share-btn" aria-label="Share on Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                  </button>
+                  <button class="share-btn" aria-label="Share on LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                  </button>
+                  <button class="share-btn" aria-label="Share on Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                  </button>
+                  <button class="share-btn" aria-label="Copy link" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied to clipboard!')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enhanced Article Sidebar -->
+            <aside class="article-sidebar" aria-label="Article sidebar">
+              
+              <!-- Table of Contents -->
+              <div class="sidebar-card">
+                <h3 class="sidebar-card-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                  Contents
+                </h3>
+                <nav>
+                  <ul class="toc-list">
+                    <li class="toc-item"><a href="#" class="toc-link">Introduction</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link">Key Insights</a></li>
+                    <li class="toc-item"><a href="#" class="toc-link">Conclusion</a></li>
+                  </ul>
+                </nav>
+              </div>
+
+              <!-- Author Bio Card -->
+              <div class="sidebar-card author-sidebar-card">
+                <h3 class="sidebar-card-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Written by
+                </h3>
+                <div class="sidebar-author">
+                  <div class="sidebar-author-avatar" aria-hidden="true"></div>
+                  <div class="sidebar-author-info">
+                    <span class="sidebar-author-name">{{author}}</span>
+                    <span class="sidebar-author-role">Writer</span>
+                  </div>
+                </div>
+                <p class="sidebar-author-bio">Exploring ideas at the intersection of technology, design, and human experience.</p>
+                <div class="sidebar-author-social">
+                  <a href="#" class="author-social-link" aria-label="Twitter">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                  </a>
+                  <a href="#" class="author-social-link" aria-label="LinkedIn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                  <a href="#" class="author-social-link" aria-label="Website">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  </a>
+                </div>
+              </div>
+
+              {{#if tags}}
+              <!-- Tags -->
+              <div class="sidebar-card">
+                <h3 class="sidebar-card-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 0 1 0 2.828l-7 7a2 2 0 0 1-2.828 0l-7-7A1.994 1.994 0 0 1 3 12V7a4 4 0 0 1 4-4z"/></svg>
+                  Tags
+                </h3>
+                <div class="article-tags">
+                  {{#each tags}}
+                  <a href="{{relativePath 'categories.html'}}" class="article-tag">{{this}}</a>
+                  {{/each}}
+                </div>
+              </div>
+              {{/if}}
+
+              <!-- Newsletter Mini -->
+              <div class="sidebar-card sidebar-newsletter">
+                <h3 class="sidebar-card-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+                  Newsletter
+                </h3>
+                <p class="sidebar-newsletter-text">Get the latest articles delivered to your inbox.</p>
+                <form class="sidebar-newsletter-form" onsubmit="event.preventDefault(); this.classList.add('is-submitted');">
+                  <input type="email" class="sidebar-newsletter-input" placeholder="your@email.com" required>
+                  <button type="submit" class="sidebar-newsletter-btn">Subscribe</button>
+                </form>
+                <p class="sidebar-newsletter-success">Thanks for subscribing! 🎉</p>
+              </div>
+
+              <!-- Related Posts -->
+              <div class="sidebar-card">
+                <h3 class="sidebar-card-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                  More to Read
+                </h3>
+                <ul class="related-sidebar-list">
+                  <li class="related-sidebar-item">
+                    <div class="related-sidebar-thumb">
+                      <img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=200&auto=format&fit=crop" alt="Dark mode design" loading="lazy">
+                    </div>
+                    <div class="related-sidebar-content">
+                      <a href="{{relativePath 'posts/designing-for-dark-mode.html'}}" class="related-sidebar-title">Designing for Dark Mode</a>
+                      <span class="related-sidebar-date">Jan 12, 2025</span>
+                    </div>
+                  </li>
+                  <li class="related-sidebar-item">
+                    <div class="related-sidebar-thumb">
+                      <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=200&auto=format&fit=crop" alt="Design tools" loading="lazy">
+                    </div>
+                    <div class="related-sidebar-content">
+                      <a href="{{relativePath 'posts/the-craft-of-microinteractions.html'}}" class="related-sidebar-title">The Craft of Microinteractions</a>
+                      <span class="related-sidebar-date">Dec 28, 2024</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+            </aside>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  {{> footer}}
+</body>
+</html>
