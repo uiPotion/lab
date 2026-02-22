@@ -1,0 +1,18 @@
+{
+  "name": "landing-page-darkmode",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "harold-scripts build",
+    "start": "harold-scripts start"
+  },
+  "devDependencies": {
+    "harold-scripts": "^1.4.0"
+  },
+  "harold": {
+    "mdFilesDirName": "posts",
+    "mdFilesLayoutsDirName": "blog-layouts",
+    "outputDirName": "build",
+    "minifyHtml": true,
+    "minifyCss": true
+  }
+}

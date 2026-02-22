@@ -1,0 +1,77 @@
+/* ========================================
+   AUTH / LOGIN STYLES
+   HaroldJS + UIPotion
+   ======================================== */
+
+.auth-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 6rem 1.5rem 3rem; position: relative; }
+.auth-page .grid-pattern { z-index: 0; }
+
+.auth-container { width: 100%; max-width: 420px; position: relative; z-index: 1; }
+
+.auth-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-2xl); box-shadow: var(--shadow-lg); padding: 2rem; }
+@media (min-width: 480px) { .auth-card { padding: 2.5rem; } }
+
+.auth-card__header { text-align: center; margin-bottom: 1.5rem; }
+.auth-card__logo { width: 48px; height: 48px; margin: 0 auto 1rem; background: linear-gradient(135deg, var(--accent), #c084fc); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: white; }
+.auth-card__logo svg { width: 24px; height: 24px; }
+.auth-card__title { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+.auth-card__subtitle { font-size: 0.9375rem; color: var(--text-secondary); }
+
+.auth-card__error { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1rem; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: var(--radius-lg); color: #ef4444; font-size: 0.875rem; margin-bottom: 1rem; }
+.auth-card__error svg { width: 18px; height: 18px; flex-shrink: 0; }
+.auth-card__error[hidden] { display: none !important; }
+
+.auth-form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.form-field { display: flex; flex-direction: column; gap: 0.375rem; }
+.form-field__label { font-size: 0.875rem; font-weight: 500; color: var(--text-primary); }
+.form-field__required { color: #ef4444; margin-left: 0.125rem; }
+.form-field__input-wrapper { position: relative; display: flex; align-items: center; }
+.form-field__input { width: 100%; padding: 0.75rem 1rem; font-size: 0.9375rem; color: var(--text-primary); background: var(--bg-primary); border: 1px solid var(--border); border-radius: var(--radius-lg); transition: all 0.2s ease; }
+.form-field__input::placeholder { color: var(--text-tertiary); }
+.form-field__input:hover { border-color: var(--text-secondary); }
+.form-field__input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+.form-field__input[aria-invalid="true"] { border-color: #ef4444; background: rgba(239, 68, 68, 0.05); }
+.form-field__input[aria-invalid="true"]:focus { box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15); }
+.form-field__icon { position: absolute; right: 1rem; color: #22c55e; }
+.form-field__icon svg { width: 20px; height: 20px; }
+.form-field__icon[hidden] { display: none !important; }
+.form-field__toggle-password { position: absolute; right: 1rem; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: none; background: transparent; color: var(--text-tertiary); cursor: pointer; border-radius: var(--radius-md); transition: all 0.2s ease; }
+.form-field__toggle-password:hover { color: var(--text-secondary); background: var(--bg-tertiary); }
+.form-field__toggle-icon { width: 18px; height: 18px; }
+.form-field__toggle-icon[hidden] { display: none !important; }
+.form-field__error { font-size: 0.8125rem; color: #ef4444; min-height: 1.25rem; }
+.form-field__error:empty { min-height: 0; }
+
+.auth-form__options { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.auth-form__forgot-link { font-size: 0.875rem; color: var(--accent); font-weight: 500; transition: opacity 0.2s ease; }
+.auth-form__forgot-link:hover { opacity: 0.8; }
+
+.checkbox { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
+.checkbox__input { position: absolute; opacity: 0; width: 0; height: 0; }
+.checkbox__checkmark { width: 18px; height: 18px; border: 2px solid var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
+.checkbox__checkmark svg { width: 12px; height: 12px; color: white; opacity: 0; transform: scale(0); transition: all 0.2s ease; }
+.checkbox__input:checked + .checkbox__checkmark { background: var(--accent); border-color: var(--accent); }
+.checkbox__input:checked + .checkbox__checkmark svg { opacity: 1; transform: scale(1); }
+.checkbox__input:focus-visible + .checkbox__checkmark { box-shadow: 0 0 0 3px var(--accent-glow); }
+.checkbox__label { font-size: 0.875rem; color: var(--text-secondary); }
+
+.auth-form__submit { width: 100%; min-height: 48px; }
+.auth-form__submit-spinner { display: inline-flex; }
+.auth-form__submit-spinner svg { width: 20px; height: 20px; animation: spin 1s linear infinite; }
+.auth-form__submit-spinner[hidden] { display: none !important; }
+.auth-form__submit-text[hidden] { display: none !important; }
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.auth-card__demo { margin-top: 1.5rem; padding: 1rem; background: var(--bg-tertiary); border: 1px dashed var(--border); border-radius: var(--radius-lg); text-align: center; cursor: pointer; transition: all 0.2s ease; }
+.auth-card__demo:hover { border-color: var(--accent); background: var(--accent-light); }
+.auth-card__demo-title { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.5rem; }
+.auth-card__demo-credentials { display: flex; flex-direction: column; gap: 0.375rem; }
+.auth-card__demo-credentials code { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-secondary); background: var(--bg-secondary); padding: 0.25rem 0.5rem; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+.auth-card__demo-hint { font-size: 0.75rem; color: var(--text-tertiary); margin-top: 0.5rem; }
+
+.auth-card__footer { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); text-align: center; }
+.auth-card__footer p { font-size: 0.9375rem; color: var(--text-secondary); }
+.auth-card__link { color: var(--accent); font-weight: 600; transition: opacity 0.2s ease; }
+.auth-card__link:hover { opacity: 0.8; }

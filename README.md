@@ -10,8 +10,9 @@ These projects are experiments and starting points, not production-ready templat
 
 ## Experiments
 
-- **[experiment-1](./experiment-1/)** — Dark-mode landing page, auth flow, and data dashboard. Generate with [potion-kit](https://github.com/uiPotion/potion-kit) and Kimi K2.5 model.
-- **[experiment-2](./experiment-2/)** — Dark/light mode blog experience with article pages, category browsing, contact form, and client-side search using Lunr. Generate with [potion-kit](https://github.com/uiPotion/potion-kit) and Kimi K2.5 model.
+- **[experiment-1](./experiment-1/)** — Dark-mode landing page, auth flow, and data dashboard. Generated with [potion-kit](https://github.com/uiPotion/potion-kit) and Kimi K2.5 model.
+- **[experiment-2](./experiment-2/)** — Dark/light mode blog experience with article pages, category browsing, contact form, and client-side search using Lunr. Generated with [potion-kit](https://github.com/uiPotion/potion-kit) and Kimi K2.5 model.
+- **[experiment-3](./experiment-3/)** — Landing page with dark mode, blog, chat UI, and login/auth flow. Generated with [potion-kit](https://github.com/uiPotion/potion-kit) and Kimi K2.5 model.
 
 ## Prerequisites
 

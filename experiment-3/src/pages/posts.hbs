@@ -1,0 +1,29 @@
+{{> head bodyClass='page-posts'}}
+
+{{> navbar}}
+
+<main class="main">
+  <!-- Posts Hero -->
+  <section class="posts-hero">
+    <div class="container">
+      <div class="posts-hero__breadcrumbs">
+        <a href="{{relativePath 'index.html'}}" class="posts-hero__breadcrumb-link">Home</a>
+        <span class="posts-hero__breadcrumb-separator">/</span>
+        <a href="{{relativePath 'blog.html'}}" class="posts-hero__breadcrumb-link">Blog</a>
+        <span class="posts-hero__breadcrumb-separator">/</span>
+        <span class="posts-hero__breadcrumb-current">All Articles</span>
+      </div>
+      <h1 class="posts-hero__title">All Articles</h1>
+      <p class="posts-hero__subtitle">Browse the complete archive of our blog posts.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Posts List with Pagination -->
+    <section class="posts-archive">
+      {{postsList perPageLimit=9 currentPage=1 dateFormat="dd mmmm yyyy"}}
+    </section>
+  </div>
+</main>
+
+{{> footer}}

@@ -1,0 +1,505 @@
+{{> head title="Build Beautiful Landing Pages" description="PotionKit helps you build fast, accessible, and beautiful landing pages with HaroldJS and UIPotion components."}}
+
+<!-- Grid pattern background -->
+<div class="grid-pattern" aria-hidden="true"></div>
+
+{{> navbar}}
+
+<main id="main-content" role="main">
+  <!-- Hero Section -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__container">
+      <div class="hero__content">
+        <span class="hero__eyebrow">Now in v2.0</span>
+        <h1 id="hero-heading" class="hero__headline">
+          Build <span class="gradient-text">beautiful</span> landing pages that convert
+        </h1>
+        <p class="hero__subheadline">
+          The modern static site stack. Handlebars, Markdown, and SCSS — with dark mode, accessibility, and performance built-in. No bloat, no lock-in.
+        </p>
+        <div class="hero__ctas">
+          <a href="#features" class="btn btn--primary btn--large">
+            Get Started
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#" class="btn btn--secondary btn--large">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><path d="m6 9 6 6 6-6"/></svg>
+            View Docs
+          </a>
+        </div>
+      </div>
+      
+      <div class="hero__visual">
+        <div class="hero__image-wrapper">
+          <img 
+            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80" 
+            alt="Abstract gradient composition with flowing shapes" 
+            class="hero__image"
+            loading="eager"
+          >
+        </div>
+        
+        <div class="code-preview">
+          <div class="code-preview__header">
+            <span class="code-preview__dot code-preview__dot--red"></span>
+            <span class="code-preview__dot code-preview__dot--yellow"></span>
+            <span class="code-preview__dot code-preview__dot--green"></span>
+          </div>
+          <pre class="code-preview__code"><code><span class="comment">// Scaffold a new HaroldJS site</span>
+<span class="keyword">npx</span> create-harold-app@latest my-app
+<span class="keyword">cd</span> my-app
+<span class="keyword">npm</span> install
+<span class="keyword">npm</span> start</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features" aria-labelledby="features-heading">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Features</span>
+        <h2 id="features-heading" class="section__title">Everything you need to ship faster</h2>
+        <p class="section__subtitle">A complete toolkit for building modern static sites. From local development to global CDN deployment.</p>
+      </div>
+      
+      <div class="features__grid">
+        <article class="feature-card">
+          <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/>
+          </svg>
+          <h3 class="feature-card__title">Lightning Fast</h3>
+          <p class="feature-card__description">Static HTML means instant loads. No hydration, no waterfalls, no JavaScript required for your content.</p>
+        </article>
+        
+        <article class="feature-card">
+          <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+          </svg>
+          <h3 class="feature-card__title">Dark Mode First</h3>
+          <p class="feature-card__description">Built-in theme system with system preference detection, user persistence, and zero flash on load.</p>
+        </article>
+        
+        <article class="feature-card">
+          <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/>
+          </svg>
+          <h3 class="feature-card__title">Developer Experience</h3>
+          <p class="feature-card__description">Hot reload, intuitive file structure, and familiar syntax. No framework lock-in or complex abstractions.</p>
+        </article>
+        
+        <article class="feature-card">
+          <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"/>
+          </svg>
+          <h3 class="feature-card__title">Accessible</h3>
+          <p class="feature-card__description">WCAG 2.1 AA compliant components, semantic HTML, ARIA labels, and keyboard navigation built-in.</p>
+        </article>
+        
+        <article class="feature-card">
+          <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75 12 21l9.75-5.25"/><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 9.75 5.25L21.75 12"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25 12 13.5l9.75-5.25L12 3 2.25 8.25Z"/>
+          </svg>
+          <h3 class="feature-card__title">Component Library</h3>
+          <p class="feature-card__description">UIPotion provides 50+ copy-paste components. Modals, tables, forms, notifications — all ready to use.</p>
+        </article>
+        
+        <article class="feature-card">
+          <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"/>
+          </svg>
+          <h3 class="feature-card__title">Deploy Anywhere</h3>
+          <p class="feature-card__description">Static output works on Vercel, Netlify, Cloudflare, GitHub Pages, S3, or any CDN of your choice.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Testimonials</span>
+        <h2 id="testimonials-heading" class="section__title">Loved by developers</h2>
+        <p class="section__subtitle">See what teams are building with PotionKit.</p>
+      </div>
+      
+      <div class="testimonials__grid">
+        <article class="testimonial-card">
+          <p class="testimonial-card__quote">"We migrated from Next.js to HaroldJS and cut our build times by 80%. The simplicity is refreshing — no magic, just HTML, CSS, and a bit of JS."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar" aria-hidden="true">JD</div>
+            <div>
+              <div class="testimonial-card__name">Jane Doe</div>
+              <div class="testimonial-card__title">CTO, TechStart</div>
+            </div>
+          </div>
+        </article>
+        
+        <article class="testimonial-card">
+          <p class="testimonial-card__quote">"The dark mode implementation is flawless. No flash of unstyled content, respects system preferences, and persists user choice. It just works."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar" aria-hidden="true">MS</div>
+            <div>
+              <div class="testimonial-card__name">Mark Smith</div>
+              <div class="testimonial-card__title">Frontend Engineer</div>
+            </div>
+          </div>
+        </article>
+        
+        <article class="testimonial-card">
+          <p class="testimonial-card__quote">"Finally, a static site generator that doesn't overcomplicate things. UIPotion components are beautifully designed and accessible out of the box."</p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar" aria-hidden="true">AL</div>
+            <div>
+              <div class="testimonial-card__name">Amy Lee</div>
+              <div class="testimonial-card__title">Design Engineer</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section" id="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Pricing</span>
+        <h2 id="pricing-heading" class="section__title">Simple, transparent pricing</h2>
+        <p class="section__subtitle">Choose the perfect plan for your needs. Upgrade or downgrade anytime.</p>
+      </div>
+      
+      <!-- Billing Toggle -->
+      <div class="billing-toggle" role="group" aria-label="Billing frequency">
+        <button 
+          type="button" 
+          class="billing-toggle__label billing-toggle__label--monthly billing-toggle__label--active" 
+          data-billing="monthly"
+          aria-pressed="true"
+        >
+          Monthly
+        </button>
+        <button 
+          type="button" 
+          class="billing-toggle__switch" 
+          data-toggle
+          role="switch" 
+          aria-checked="false"
+          aria-label="Switch to yearly billing"
+        >
+          <span class="billing-toggle__thumb" aria-hidden="true"></span>
+        </button>
+        <button 
+          type="button" 
+          class="billing-toggle__label billing-toggle__label--yearly" 
+          data-billing="yearly"
+          aria-pressed="false"
+        >
+          Yearly
+          <span class="billing-toggle__badge">Save 20%</span>
+        </button>
+      </div>
+      
+      <!-- Pricing Plans -->
+      <div class="pricing__grid" role="list" aria-label="Pricing plans">
+        <!-- Starter Plan -->
+        <article class="pricing-card" role="listitem">
+          <div class="pricing-card__content">
+            <header class="pricing-card__header">
+              <h3 class="pricing-card__name">Starter</h3>
+              <p class="pricing-card__description">Perfect for individuals and hobby projects</p>
+            </header>
+            
+            <div class="pricing-card__price-wrapper">
+              <div class="pricing-card__price">
+                <span class="pricing-card__currency">$</span>
+                <span class="pricing-card__amount" data-price-monthly="9" data-price-yearly="89">9</span>
+                <span class="pricing-card__period">/month</span>
+              </div>
+              <p class="pricing-card__yearly-savings" data-yearly-savings hidden>
+                <span class="pricing-card__old-price">$108</span> billed yearly
+              </p>
+            </div>
+            
+            <a href="#" class="btn btn--secondary pricing-card__cta">
+              Get Started
+            </a>
+            
+            <ul class="pricing-card__features" aria-label="Features included in Starter plan">
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>Up to 3 projects</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>1 GB storage</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>Basic analytics</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>Community support</span>
+              </li>
+              <li class="pricing-card__feature pricing-card__feature--excluded">
+                <svg class="pricing-card__cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+                </svg>
+                <span>Custom domains</span>
+              </li>
+              <li class="pricing-card__feature pricing-card__feature--excluded">
+                <svg class="pricing-card__cross" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+                </svg>
+                <span>API access</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+        
+        <!-- Professional Plan (Highlighted) -->
+        <article class="pricing-card pricing-card--highlighted" role="listitem">
+          <span class="pricing-card__badge" role="status">Most Popular</span>
+          <div class="pricing-card__content">
+            <header class="pricing-card__header">
+              <h3 class="pricing-card__name">Professional</h3>
+              <p class="pricing-card__description">For growing teams and small businesses</p>
+            </header>
+            
+            <div class="pricing-card__price-wrapper">
+              <div class="pricing-card__price">
+                <span class="pricing-card__currency">$</span>
+                <span class="pricing-card__amount" data-price-monthly="29" data-price-yearly="279">29</span>
+                <span class="pricing-card__period">/month</span>
+              </div>
+              <p class="pricing-card__yearly-savings" data-yearly-savings hidden>
+                <span class="pricing-card__old-price">$348</span> billed yearly
+              </p>
+            </div>
+            
+            <a href="#" class="btn btn--primary pricing-card__cta">
+              Get Started
+            </a>
+            
+            <ul class="pricing-card__features" aria-label="Features included in Professional plan">
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>Unlimited projects</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>50 GB storage</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>Advanced analytics</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>Priority support</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>Custom domains</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>API access</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+        
+        <!-- Enterprise Plan -->
+        <article class="pricing-card" role="listitem">
+          <div class="pricing-card__content">
+            <header class="pricing-card__header">
+              <h3 class="pricing-card__name">Enterprise</h3>
+              <p class="pricing-card__description">For large organizations with advanced needs</p>
+            </header>
+            
+            <div class="pricing-card__price-wrapper">
+              <div class="pricing-card__price">
+                <span class="pricing-card__currency">$</span>
+                <span class="pricing-card__amount" data-price-monthly="99" data-price-yearly="990">99</span>
+                <span class="pricing-card__period">/month</span>
+              </div>
+              <p class="pricing-card__yearly-savings" data-yearly-savings hidden>
+                <span class="pricing-card__old-price">$1,188</span> billed yearly
+              </p>
+            </div>
+            
+            <a href="#" class="btn btn--secondary pricing-card__cta">
+              Contact Sales
+            </a>
+            
+            <ul class="pricing-card__features" aria-label="Features included in Enterprise plan">
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>Everything in Pro</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>Unlimited storage</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>24/7 dedicated support</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>SSO & SAML</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>Custom integrations</span>
+              </li>
+              <li class="pricing-card__feature">
+                <svg class="pricing-card__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                </svg>
+                <span>SLA guarantee</span>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      
+      <p class="pricing__guarantee">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/>
+        </svg>
+        30-day money-back guarantee. No questions asked.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section" id="cta" aria-labelledby="cta-heading">
+    <div class="cta-section__gradient" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">Get Started</span>
+        <h2 id="cta-heading" class="section__title">Ready to build something great?</h2>
+        <p class="section__subtitle">Start shipping faster today. Free forever for open source projects. No credit card required.</p>
+        <a href="#" class="btn btn--primary btn--large">
+          Get Started Free
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{> footer}}
+
+<!-- Pricing Toggle Script -->
+<script>
+(function() {
+  const toggleSwitch = document.querySelector('[data-toggle]');
+  const monthlyLabel = document.querySelector('[data-billing="monthly"]');
+  const yearlyLabel = document.querySelector('[data-billing="yearly"]');
+  const priceElements = document.querySelectorAll('[data-price-monthly]');
+  const savingsElements = document.querySelectorAll('[data-yearly-savings]');
+  const periodElements = document.querySelectorAll('.pricing-card__period');
+  
+  let isYearly = false;
+  
+  function updatePrices(yearly) {
+    isYearly = yearly;
+    
+    // Update toggle switch
+    toggleSwitch.setAttribute('aria-checked', yearly);
+    toggleSwitch.classList.toggle('billing-toggle__switch--yearly', yearly);
+    
+    // Update labels
+    monthlyLabel.classList.toggle('billing-toggle__label--active', !yearly);
+    monthlyLabel.setAttribute('aria-pressed', !yearly);
+    yearlyLabel.classList.toggle('billing-toggle__label--active', yearly);
+    yearlyLabel.setAttribute('aria-pressed', yearly);
+    
+    // Update prices with animation
+    priceElements.forEach(el => {
+      const monthly = el.getAttribute('data-price-monthly');
+      const yearly = el.getAttribute('data-price-yearly');
+      
+      // Fade out
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(-4px)';
+      
+      setTimeout(() => {
+        el.textContent = isYearly ? yearly : monthly;
+        // Fade in
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }, 150);
+    });
+    
+    // Update periods
+    periodElements.forEach(el => {
+      el.textContent = isYearly ? '/year' : '/month';
+    });
+    
+    // Show/hide yearly savings
+    savingsElements.forEach(el => {
+      el.hidden = !isYearly;
+    });
+  }
+  
+  // Toggle switch click
+  toggleSwitch.addEventListener('click', () => {
+    updatePrices(!isYearly);
+  });
+  
+  // Label clicks
+  monthlyLabel.addEventListener('click', () => {
+    if (isYearly) updatePrices(false);
+  });
+  
+  yearlyLabel.addEventListener('click', () => {
+    if (!isYearly) updatePrices(true);
+  });
+  
+  // Keyboard support
+  toggleSwitch.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      updatePrices(!isYearly);
+    }
+  });
+})();
+</script>
